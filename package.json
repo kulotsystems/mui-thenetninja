@@ -10,8 +10,12 @@
     "rename-index": "node -e \"require('fs').rename('dist/index.html', 'dist/404.html', function(err) { if (err) console.log(err); console.log('index.html successfully renamed to 404.html') })\""
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.17",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.5"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
