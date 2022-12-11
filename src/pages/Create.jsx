@@ -4,6 +4,11 @@ import Container from '@mui/material/Container';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import useClasses from '../hooks/useClasses.js';
 import TextField from '@mui/material/TextField';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 import { useState } from 'react';
 
 const styles = (theme) => ({
@@ -20,6 +25,7 @@ const Create = () => {
     const [details, setDetails] = useState('');
     const [titleError, setTitleError] = useState(false);
     const [detailsError, setDetailsError] = useState(false);
+    const [category, setCategory] = useState('money');
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,7 +38,7 @@ const Create = () => {
             setDetailsError(true);
 
         if(title && details) {
-
+            console.log(title, details, category);
         }
     };
 
@@ -74,6 +80,16 @@ const Create = () => {
                     error={detailsError}
                 />
 
+                <FormControl className={classes.field}>
+                    <FormLabel>Note Category</FormLabel>
+                    <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)}>
+                        <FormControlLabel value="money" control={<Radio/>} label="Money"/>
+                        <FormControlLabel value="todos" control={<Radio/>} label="Todos"/>
+                        <FormControlLabel value="reminders" control={<Radio/>} label="Reminders"/>
+                        <FormControlLabel value="work" control={<Radio/>} label="Money"/>
+                    </RadioGroup>
+                </FormControl>
+
                 <Button
                     type="submit"
                     color="secondary"
@@ -83,8 +99,6 @@ const Create = () => {
                     Submit
                 </Button>
             </form>
-
-
         </Container>
     );
 };
