@@ -10,6 +10,8 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import routes from '../routes.js';
 
 const styles = (theme) => ({
     field: {
@@ -26,6 +28,7 @@ const Create = () => {
     const [titleError, setTitleError] = useState(false);
     const [detailsError, setDetailsError] = useState(false);
     const [category, setCategory] = useState('money');
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,7 +41,14 @@ const Create = () => {
             setDetailsError(true);
 
         if(title && details) {
-            console.log(title, details, category);
+            fetch(`http://localhost:3000/notes`, {
+                method: 'POST',
+                headers: {'Content-type': 'application/json'},
+                body: JSON.stringify({ title, details, category })
+            })
+                .then(response => {
+                    navigate(routes.notes);
+                });
         }
     };
 
