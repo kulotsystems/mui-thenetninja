@@ -10,7 +10,7 @@ import Layout from './components/Layout.jsx';
 const theme = createTheme({
     palette: {
         primary: {
-            main: '#1976d2'
+            main: '#fefefe'
         },
 
         // different approach
