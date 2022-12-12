@@ -86,7 +86,7 @@ const Create = () => {
                         <FormControlLabel value="money" control={<Radio/>} label="Money"/>
                         <FormControlLabel value="todos" control={<Radio/>} label="Todos"/>
                         <FormControlLabel value="reminders" control={<Radio/>} label="Reminders"/>
-                        <FormControlLabel value="work" control={<Radio/>} label="Money"/>
+                        <FormControlLabel value="work" control={<Radio/>} label="Work"/>
                     </RadioGroup>
                 </FormControl>
 
