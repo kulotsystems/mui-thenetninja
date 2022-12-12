@@ -9,7 +9,7 @@ import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutline';
 const NoteCard = ({ note, handleDelete}) => {
 
     return (
-        <Card elevation={1}>
+        <Card elevation={1} style={{border: (note.category === 'work') ? '1px solid red' : '1px solid transparent'}}>
             <CardHeader
                 action={
                     <IconButton onClick={() => handleDelete(note.id)}>

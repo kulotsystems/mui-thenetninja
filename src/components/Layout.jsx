@@ -12,25 +12,31 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import routes from '../routes.js';
 
 const drawerWidth = 240;
-const styles = (theme) => ({
-    page: {
-        background: '#f9f9f9 !important',
-        width: '100% !important'
-    },
-    drawer: {
-        width: `${drawerWidth}px !important`
-    },
-    drawerPaper: {
-        width: `${drawerWidth}px !important`
-    },
-    root: {
-        display: 'flex !important'
-    },
-    active: {
-        background: '#f4f4f4 !important',
-        color: '#d500f9 !important'
+const styles = (theme) => {
+    return {
+        page: {
+            background: '#f9f9f9 !important',
+            width: '100% !important',
+            padding: `${theme.spacing(3)}`
+        },
+        drawer: {
+            width: `${drawerWidth}px !important`
+        },
+        drawerPaper: {
+            width: `${drawerWidth}px !important`
+        },
+        root: {
+            display: 'flex !important'
+        },
+        active: {
+            background: '#f4f4f4 !important',
+            color: `${theme.palette.secondary.main} !important`
+        },
+        title: {
+            padding: `${theme.spacing(2)} !important`
+        }
     }
-});
+}
 
 const Layout = ({ children }) => {
     const classes  = useClasses(styles);
@@ -62,7 +68,7 @@ const Layout = ({ children }) => {
                 classes={{ paper: classes.drawerPaper }}
             >
                 <div>
-                    <Typography variant="h5">
+                    <Typography variant="h5" className={classes.title}>
                         Ninja Notes
                     </Typography>
                 </div>
