@@ -4,6 +4,7 @@ import Create from './pages/Create.jsx';
 import routes from './routes.js';
 import { createTheme, ThemeProvider } from '@mui/material';
 import { purple } from '@mui/material/colors';
+import Layout from './components/Layout.jsx';
 
 // Custom Theme
 const theme = createTheme({
@@ -28,10 +29,12 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <BrowserRouter>
-                <Routes>
-                    <Route path={routes.notes}   element={<Notes/>} exact/>
-                    <Route path={routes.create} element={<Create/>} exact/>
-                </Routes>
+                <Layout>
+                    <Routes>
+                        <Route path={routes.notes}   element={<Notes/>} exact/>
+                        <Route path={routes.create} element={<Create/>} exact/>
+                    </Routes>
+                </Layout>
             </BrowserRouter>
         </ThemeProvider>
     )
