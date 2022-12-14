@@ -6,6 +6,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
+import Avatar from '@mui/material/Avatar';
 
 import useClasses from '../hooks/useClasses.js';
 import SubjectOutlinedIcon from '@mui/icons-material/SubjectOutlined';
@@ -44,6 +45,9 @@ const styles = (theme) => {
         toolbar: theme.mixins.toolbar,
         date: {
             flexGrow: 1
+        },
+        avatar: {
+            marginLeft: `${theme.spacing(2)} !important`
         }
     }
 }
@@ -80,6 +84,7 @@ const Layout = ({ children }) => {
                     <Typography>
                         Mario
                     </Typography>
+                    <Avatar src="/mario-av.png" className={classes.avatar}/>
                 </Toolbar>
             </AppBar>
 
